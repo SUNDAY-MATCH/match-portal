@@ -9,7 +9,7 @@
   url:  "https://sunday-match.github.io/debitaro-shooting/"
   genre: "横スクロールシューティング"
   play_time: "10～30分"
-  description: "デビ太郎を主人公とした横スクロールシューティングゲームを甜花ちゃんと一緒にプレイします。\nデビ太郎はボス撃破のたびに強化されていきますが、周回により難易度も上昇していきます。"
+  description: "デビ太郎を主人公とした横スクロールシューティングゲームを甜花ちゃんと一緒にプレイします。\nデビ太郎はボス撃破のたびに選択的に強化できますが、周回により難易度も上昇していきます。"
   thumb: "assets/images/kiriko_yukoku.gif"
 
 - name: "ユアクマちゃんスロット"
