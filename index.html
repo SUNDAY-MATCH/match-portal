@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Godot Game Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <header>
+    <h1>My Godot Games</h1>
+    <p>遊べるゲームをいろいろ置いてます。ぜひ遊んでみてね！</p>
+  </header>
+
+  <main id="game-list" class="game-list">
+    <!-- JSでここにカードを挿入 -->
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script>
+    fetch('data/games.yml')
+      .then(res => res.text())
+      .then(text => {
+        const games = jsyaml.load(text);
+        const container = document.getElementById('game-list');
+        games.forEach(g => {
+          const card = document.createElement('div');
+          card.className = 'game-card';
+          card.innerHTML = `
+            <a href="${g.url}" target="_blank">
+              <img src="${g.thumb}" alt="${g.name} のサムネイル">
+              <h2>${g.name}</h2>
+            </a>
+            <p>${g.description}</p>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
