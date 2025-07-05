@@ -10,6 +10,7 @@
 /* 背景に重ねる画像 */
 .overlay img.bg-float {
   position: absolute;
+  opacity: 0.12;
   pointer-events: none;
   user-select: none;
   transform: rotate(0deg);
