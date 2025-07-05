@@ -1,0 +1,68 @@
+/* 背景用オーバーレイ */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('assets/images/background.png') center/cover no-repeat fixed;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+/* ヘッダー */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* ゲーム一覧 */
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.game-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  width: 260px;
+  padding: 1rem;
+  transition: transform .2s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.game-card h2 {
+  margin: .75rem 0 .5rem;
+  font-size: 1.5rem;
+  color: #ffeb3b;
+}
+
+.game-card p {
+  font-size: .9rem;
+  line-height: 1.4;
+}
