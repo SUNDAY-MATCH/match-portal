@@ -50,9 +50,29 @@
       .catch(err => console.error('YAML load error:', err));
   </script>
   <script>
-    const imageSources = [
-      'assets/images/kiriko_yukoku.gif'
-    ];
+    (async () => {
+      const user    = 'sunday-match';
+      const repo    = 'match-portal';           // 例: 'myusername.github.io'
+      const dirPath = 'assets/images_background'; // 対象フォルダ
+
+      const apiUrl = `https://api.github.com/repos/${user}/${repo}/contents/${dirPath}`;
+
+      try {
+        const res = await fetch(apiUrl);
+        if (!res.ok) throw new Error(`Error ${res.status}`);
+        const files = await res.json();
+
+        // 画像ファイルだけフィルタしてパスを取得
+        const imageSources = files
+          .filter(f => f.type === 'file' && /\.(png|jpe?g|gif|svg)$/i.test(f.name))
+          .map(f => f.download_url);
+
+        console.log(imageSources); // 100個の完全URLが配列で出ます
+        // あとはこの配列を使ってスライダーやランダム表示などが自在に！
+      } catch (err) {
+        console.error('画像一覧取得エラー:', err);
+      }
+    })();
 
     const overlay = document.querySelector('.overlay');
 
