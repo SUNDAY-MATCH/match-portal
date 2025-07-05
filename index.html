@@ -38,5 +38,37 @@
         });
       });
   </script>
+  <script>
+    const imageSources = [
+      'assets/images/kiriko_yukoku.gif',
+      'assets/images/kiriko_yukoku.gif',
+      'assets/images/kiriko_yukoku.gif',
+      'assets/images/kiriko_yukoku.gif',
+      'assets/images/kiriko_yukoku.gif',
+      'assets/images/kiriko_yukoku.gif',
+      'assets/images/kiriko_yukoku.gif'
+    ];
+
+    const overlay = document.querySelector('.overlay');
+
+    for (let i = 0; i < 15; i++) {
+      const img = document.createElement('img');
+      img.src = imageSources[Math.floor(Math.random() * imageSources.length)];
+      img.className = 'bg-float';
+
+      // ランダムな位置・大きさ・角度
+      const size = Math.floor(Math.random() * 150) + 100;
+      const x = Math.random() * (window.innerWidth - size);
+      const y = Math.random() * (window.innerHeight - size);
+      const rot = Math.random() * 60 - 30; // -30～+30度
+
+      img.style.width = `${size}px`;
+      img.style.left = `${x}px`;
+      img.style.top = `${y}px`;
+      img.style.transform = `rotate(${rot}deg)`;
+
+      overlay.appendChild(img);
+    }
+  </script>
 </body>
 </html>

@@ -3,9 +3,23 @@
   description: "障害物をすり抜けてゴールを目指すランニングゲーム。"
   thumb: "assets/images/kiriko_yukoku.gif"
 
+- name: "Super Runner"
+  url:  "https://sunday-match.github.io/debitaro-shooting/"
+  description: "障害物をすり抜けてゴールを目指すランニングゲーム。"
+  thumb: "assets/images/kiriko_yukoku.gif"
+
+- name: "Super Runner"
+  url:  "https://sunday-match.github.io/Hinana-Yourkuma-Game/"
+  description: "障害物をすり抜けてゴールを目指すランニングゲーム。"
+  thumb: "assets/images/kiriko_yukoku.gif"
+
+- name: "Super Runner"
+  url:  "https://sunday-match.github.io/Chiyoko-Koito-Game/"
+  description: "障害物をすり抜けてゴールを目指すランニングゲーム。"
+  thumb: "assets/images/kiriko_yukoku.gif"
+
 - name: "Puzzle Blocks"
-  url:  "https://sunday-match.github.io/kiriko-slot/"
+  url:  "https://sunday-match.github.io/match-godot-games/"
   description: "積み木を組み合わせて全消しを目指すパズル。"
   thumb: "assets/images/kiriko_yukoku.gif"
 
-# … ひとゲームずつ追加
