@@ -1,9 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 /* ── 背景オーバーレイ ── */
 .overlay {
   position: fixed;
@@ -100,7 +94,7 @@ header p {
 
 .game-info {
   width: 100%;
-  padding: 0.75rem 0.5rem 1rem 0.4rem;
+  padding: 0.75rem 0.5rem 1rem 0.2rem;
   color: #000000;
 }
 
