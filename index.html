@@ -84,21 +84,27 @@
 
     const overlay = document.querySelector('.overlay');
 
-    for (let i = 0; i < 100; i++) {
+    const totalImages = 100; // 🔸表示する画像枚数
+
+    for (let i = 0; i < totalImages; i++) {
       const img = document.createElement('img');
       img.src = imageSources[Math.floor(Math.random() * imageSources.length)];
       img.className = 'bg-float';
 
-      // ランダムな位置・大きさ・角度
-      const size = Math.floor(Math.random() * 150) + 100;
-      const x = Math.random() * (window.innerWidth - size);
-      const y = Math.random() * (window.innerHeight - size);
-      const rot = Math.random() * 60 - 30; // -30～+30度
+      // ランダムな位置（ウィンドウ全体に分散）
+      const padding = 50; // 端に寄りすぎないように
+      const x = Math.random() * (window.innerWidth - 2 * padding) + padding;
+      const y = Math.random() * (window.innerHeight - 2 * padding) + padding;
+
+      // サイズと角度（自然な範囲にランダム化）
+      const size = Math.floor(Math.random() * 80) + 100; // 100～180px
+      const rot = Math.random() * 40 - 20; // -20～+20度
 
       img.style.width = `${size}px`;
       img.style.left = `${x}px`;
       img.style.top = `${y}px`;
-      img.style.transform = `rotate(${rot}deg)`;
+      img.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
+      img.style.position = 'absolute';
 
       overlay.appendChild(img);
     }
