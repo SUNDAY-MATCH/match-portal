@@ -19,7 +19,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  color: #fff;
+  color: #000000;
 }
 
 /* ヘッダー */
@@ -68,7 +68,7 @@ header p {
 .game-card h2 {
   margin: .75rem 0 .5rem;
   font-size: 1.5rem;
-  color: #ffeb3b;
+  color: #2f00ff;
 }
 
 .game-card p {
