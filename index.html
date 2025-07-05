@@ -30,9 +30,15 @@
           card.innerHTML = `
             <a href="${g.url}" target="_blank">
               <img src="${g.thumb}" alt="${g.name} のサムネイル">
-              <h2>${g.name}</h2>
             </a>
-            <p>${g.description}</p>
+            <div class="game-info">
+              <h2><a href="${g.url}" target="_blank">${g.name}</a></h2>
+              <ul class="game-meta">
+                <li><strong>ジャンル：</strong>${g.genre}</li>
+                <li><strong>想定プレイ時間：</strong>${g.play_time}</li>
+              </ul>
+              <p class="game-desc">${g.description}</p>
+            </div>
           `;
           container.appendChild(card);
         });

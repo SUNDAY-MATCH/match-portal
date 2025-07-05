@@ -48,11 +48,13 @@ header p {
 }
 
 .game-card {
+  display: flex;
+  flex-direction: column;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(5px);
   border-radius: 8px;
   width: 260px;
-  padding: 1rem;
+  overflow: hidden;
   transition: transform .2s;
 }
 
@@ -62,16 +64,43 @@ header p {
 
 .game-card img {
   width: 100%;
-  border-radius: 4px;
+  height: auto;
+  display: block;
 }
 
-.game-card h2 {
-  margin: .75rem 0 .5rem;
-  font-size: 1.5rem;
-  color: #2f00ff;
+.game-info {
+  padding: 0.75rem 1rem 1rem;
+  color: #fff;
 }
 
-.game-card p {
-  font-size: .9rem;
+.game-info h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #ffeb3b;
+}
+
+.game-info h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.game-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.game-meta li {
+  margin-bottom: 0.25rem;
+}
+
+.game-meta strong {
+  color: #ffd54f;
+}
+
+.game-desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
   line-height: 1.4;
 }
