@@ -10,7 +10,7 @@
 /* 背景に重ねる画像 */
 .overlay img.bg-float {
   position: absolute;
-  opacity: 0.12;
+  filter: brightness(0.7); /* 色を暗くして背景に馴染ませる */
   pointer-events: none;
   user-select: none;
   transform: rotate(0deg);
@@ -70,7 +70,7 @@ header p {
 
 .game-info {
   padding: 0.75rem 1rem 1rem;
-  color: #fff;
+  color: #000000;
 }
 
 .game-info p {
@@ -81,7 +81,7 @@ header p {
 .game-info h2 {
   margin: 0;
   font-size: 1.4rem;
-  color: #ffeb3b;
+  color: #0400ff;
 }
 
 .game-info h2 a {
@@ -101,7 +101,7 @@ header p {
 }
 
 .game-meta strong {
-  color: #ffd54f;
+  color: #000000;
 }
 
 .game-desc {
