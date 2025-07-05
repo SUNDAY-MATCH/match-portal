@@ -51,7 +51,7 @@ header {
 /* サイトタイトル部分にコーティング */
 header h1 {
   margin: 0;
-  font-size: 3.2rem;
+  font-size: 3.3rem;
 
   display: inline-block;                  /* 幅を文字数分に限定 */
   padding: 0.5rem 1rem;                   /* 内側余白 */
