@@ -23,8 +23,10 @@
       .then(res => res.text())
       .then(text => {
         const games = jsyaml.load(text);
+        console.log('Loaded games:', games);    // ←全体が配列かチェック
         const container = document.getElementById('game-list');
         games.forEach(g => {
+          console.log('Game entry:', g);       // ←個別オブジェクトの中身を確認
           const card = document.createElement('div');
           card.className = 'game-card';
           card.innerHTML = `
@@ -32,17 +34,18 @@
               <img src="${g.thumb}" alt="${g.name} のサムネイル">
             </a>
             <div class="game-info">
-              <h2><a href="${g.url}" target="_blank">${g.name}</a></h2>
-              <ul class="game-meta">
-                <li><strong>ジャンル：</strong>${g.genre}</li>
-                <li><strong>想定プレイ時間：</strong>${g.play_time}</li>
-              </ul>
+              <h2>
+                <a href="${g.url}" target="_blank">${g.name}</a>
+              </h2>
+              <p><strong>ジャンル：</strong>${g.genre || '—'}</p>
+              <p><strong>プレイ時間：</strong>${g.play_time || '—'}</p>
               <p class="game-desc">${g.description}</p>
             </div>
           `;
           container.appendChild(card);
         });
-      });
+      })
+      .catch(err => console.error('YAML load error:', err));
   </script>
   <script>
     const imageSources = [
@@ -81,7 +84,7 @@
 
     const overlay = document.querySelector('.overlay');
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 100; i++) {
       const img = document.createElement('img');
       img.src = imageSources[Math.floor(Math.random() * imageSources.length)];
       img.className = 'bg-float';

@@ -73,6 +73,11 @@ header p {
   color: #fff;
 }
 
+.game-info p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
 .game-info h2 {
   margin: 0;
   font-size: 1.4rem;
