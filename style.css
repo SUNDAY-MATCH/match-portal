@@ -45,6 +45,7 @@ body {
 header {
   text-align: center;
   padding: 3rem 1rem;
+  background: rgba(255, 255, 255, 0.5);    /* 半透明の白背景 */
 }
 
 /* サイトタイトル部分にコーティング */
@@ -53,7 +54,6 @@ header h1 {
   font-size: 3rem;
 
   display: inline-block;                  /* 幅を文字数分に限定 */
-  background: rgba(255, 255, 255, 0.8);    /* 半透明の白背景 */
   padding: 0.5rem 1rem;                   /* 内側余白 */
   border-radius: 8px;                     /* 角丸 */
 }
@@ -75,7 +75,7 @@ header p {
 .game-card {
   display: flex;
   flex-direction: column;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.5);
   backdrop-filter: blur(5px);
   border-radius: 8px;
   width: 260px;
