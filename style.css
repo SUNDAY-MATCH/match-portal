@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* ── 背景オーバーレイ ── */
 .overlay {
   position: fixed;
