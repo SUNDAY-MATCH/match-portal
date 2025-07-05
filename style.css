@@ -45,7 +45,7 @@ body {
 header {
   text-align: center;
   padding: 3rem 1rem;
-  background: rgba(255, 255, 255, 0.5);    /* 半透明の白背景 */
+  background: rgba(255, 255, 255, 0.8);    /* 半透明の白背景 */
 }
 
 /* サイトタイトル部分にコーティング */
