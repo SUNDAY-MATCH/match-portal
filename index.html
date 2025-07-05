@@ -50,6 +50,9 @@
       .catch(err => console.error('YAML load error:', err));
   </script>
   <script>
+
+    const imageSources = [];
+
     (async () => {
       const user    = 'sunday-match';
       const repo    = 'match-portal';           // 例: 'myusername.github.io'
@@ -63,7 +66,7 @@
         const files = await res.json();
 
         // 画像ファイルだけフィルタしてパスを取得
-        const imageSources = files
+        imageSources = files
           .filter(f => f.type === 'file' && /\.(png|jpe?g|gif|svg)$/i.test(f.name))
           .map(f => f.download_url);
 
