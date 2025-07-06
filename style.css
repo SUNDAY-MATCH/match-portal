@@ -85,6 +85,18 @@ header p {
   color: #41525d;                 /* noteのダークグレー寄りの色 */
 }
 
+/* 差分スタイル： social-iconクラスの定義 */
+.social-icon {
+  width: 1.8rem;       /* アイコンの幅を親リンクに合わせる */
+  height: auto;
+  display: block;
+  transition: transform .2s;
+}
+
+.social-links a:hover .social-icon {
+  transform: scale(1.1);
+}
+
 /* ── ゲーム一覧 ── */
 .game-list {
   display: flex;
