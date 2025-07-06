@@ -63,6 +63,28 @@ header p {
   font-size: 1.25rem;
 }
 
+/* ── ソーシャルリンクアイコン ── */
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;              /* アイコンサイズ */
+  color: #000;                    /* 通常時の色 */
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #1da1f2;                 /* Xのブランドカラー（ツイッター青） */
+}
+
+.social-links a:nth-child(2):hover {
+  color: #41525d;                 /* noteのダークグレー寄りの色 */
+}
+
 /* ── ゲーム一覧 ── */
 .game-list {
   display: flex;
