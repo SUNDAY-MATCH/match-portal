@@ -169,29 +169,48 @@
 
     const overlay = document.querySelector('.overlay');
 
-    const totalImages = 50; // 🔸表示する画像枚数
+    const totalImages = 30;
+    const minDistance = 100; // 🔸最小距離（これより近いとスキップ）
+    const padding = 50;
 
-    for (let i = 0; i < totalImages; i++) {
-      const img = document.createElement('img');
-      img.src = imageSources[Math.floor(Math.random() * imageSources.length)];
-      img.className = 'bg-float';
+    const placedPositions = [];
 
-      // ランダムな位置（ウィンドウ全体に分散）
-      const padding = 50; // 端に寄りすぎないように
+    function isFarEnough(x, y) {
+      return placedPositions.every(pos => {
+        const dx = pos.x - x;
+        const dy = pos.y - y;
+        return Math.sqrt(dx * dx + dy * dy) >= minDistance;
+      });
+    }
+
+    let placedCount = 0;
+    let tries = 0;
+    const maxTries = 5000; // 無限ループ防止
+
+    while (placedCount < totalImages && tries < maxTries) {
       const x = Math.random() * (window.innerWidth - 2 * padding) + padding;
       const y = Math.random() * (window.innerHeight - 2 * padding) + padding;
 
-      // サイズと角度（自然な範囲にランダム化）
-      const size = Math.floor(Math.random() * 160) + 200; // 200～360px
-      const rot = Math.random() * 60 - 30; // -30～+30度
+      if (isFarEnough(x, y)) {
+        const img = document.createElement('img');
+        img.src = imageSources[Math.floor(Math.random() * imageSources.length)];
+        img.className = 'bg-float';
 
-      img.style.width = `${size}px`;
-      img.style.left = `${x}px`;
-      img.style.top = `${y}px`;
-      img.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
-      img.style.position = 'absolute';
+        const size = Math.floor(Math.random() * 160) + 200; // 200〜360px
+        const rot = Math.random() * 60 - 30; // -30〜+30度
 
-      overlay.appendChild(img);
+        img.style.width = `${size}px`;
+        img.style.left = `${x}px`;
+        img.style.top = `${y}px`;
+        img.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
+        img.style.position = 'absolute';
+
+        overlay.appendChild(img);
+        placedPositions.push({ x, y });
+        placedCount++;
+      }
+
+      tries++;
     }
   </script>
 </body>
