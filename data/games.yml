@@ -1,7 +1,7 @@
 - name: "SUPYA KOITO SIS."
   url:  "https://sunday-match.github.io/supya-koito-sisters/"
   genre: "ローグライクジャンプアクション"
-  play_time: "10分～30分"
+  play_time: "10～30分"
   description: "【窓をあけて】をイメージした、小糸ちゃんが窓を目指して突き進むゲームです。\n某有名ジャンプアクションゲームをもとにしつつ、自動生成ステージ+クリアごとに性能強化というシステムになっています。\nめざせ10POST！"
   thumb: "assets/images_gif/小糸ゲーム紹介用2.gif"
 
